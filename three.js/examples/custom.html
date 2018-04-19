@@ -139,7 +139,7 @@
 		mesh.rotation.x += Math.PI*delta
 	})
 	*/
-	var loader = new THREE.GLTFLoader();
+	var loader = new THREE.gltf();
 	loader.load( 'models/scene.gltf', function ( gltf ) {
 		/*gltf.scene.traverse( function ( child ) {
 			if ( child.isMesh ) {
