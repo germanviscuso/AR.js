@@ -39,9 +39,6 @@
 
 	// Create a camera
 	var camera = new THREE.Camera();
-	camera.type = 'pattern';
-	camera.patternUrl = '../data/data/patt.infy';
-	scene.add(camera);
 
 	////////////////////////////////////////////////////////////////////////////////
 	//          handle arToolkitSource
@@ -120,7 +117,7 @@
 	//////////////////////////////////////////////////////////////////////////////////
 	//		add an object in the scene
 	//////////////////////////////////////////////////////////////////////////////////
-
+/*
 	// add a torus knot	
 	var geometry	= new THREE.CubeGeometry(1,1,1);
 	var material	= new THREE.MeshNormalMaterial({
@@ -141,6 +138,17 @@
 	onRenderFcts.push(function(delta){
 		mesh.rotation.x += Math.PI*delta
 	})
+	*/
+	var loader = new THREE.GLTFLoader();
+	loader.load( 'models/scene.gltf', function ( gltf ) {
+		/*gltf.scene.traverse( function ( child ) {
+			if ( child.isMesh ) {
+				child.material.envMap = envMap;
+			}
+		});*/
+		scene.add( gltf.scene) ;
+	});
+
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
