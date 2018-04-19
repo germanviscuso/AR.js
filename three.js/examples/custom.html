@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <!-- three.js library -->
-<script src='vendor/three.js/build/three.js'></script>
-<script src='vendor/three.js/examples/js/loaders/GLTF2Loader.js'></script>
+<!-- script src='vendor/three.js/build/three.js'></script -->
+<!-- script src='vendor/three.js/examples/js/loaders/GLTF2Loader.js'></script -->
+<script src='https://github.com/mrdoob/three.js/raw/dev/build/three.js'></script>
+<script src='https://raw.githubusercontent.com/mrdoob/three.js/9fde2f14cc1da64439ccc8307a4a2053d07e695c/examples/js/loaders/GLTFLoader.js'></script>
 <!-- ar.js -->
 <script src="../build/ar.js"></script>
 <script>THREEx.ArToolkitContext.baseURL = '../'</script>
@@ -66,6 +68,7 @@
 	window.addEventListener('resize', function(){
 		onResize()
 	})
+
 	function onResize(){
 		arToolkitSource.onResize()	
 		arToolkitSource.copySizeTo(renderer.domElement)	
@@ -118,7 +121,7 @@
 	//////////////////////////////////////////////////////////////////////////////////
 	//		add an object in the scene
 	//////////////////////////////////////////////////////////////////////////////////
-/*
+
 	// add a torus knot	
 	var geometry	= new THREE.CubeGeometry(1,1,1);
 	var material	= new THREE.MeshNormalMaterial({
@@ -139,18 +142,20 @@
 	onRenderFcts.push(function(delta){
 		mesh.rotation.x += Math.PI*delta
 	})
-	*/
+
+
+	/*
 	var loader = new THREE.GLTF2Loader();
 	//loader.load( 'models/scene.gltf', function ( gltf ) {
 		loader.load( 'https://raw.githubusercontent.com/prashant-andani/3d-models/master/iphone/scene.gltf', function ( gltf ) {
-		/*gltf.scene.traverse( function ( child ) {
+		gltf.scene.traverse( function ( child ) {
 			if ( child.isMesh ) {
 				child.material.envMap = envMap;
 			}
-		});*/
+		});
 		scene.add( gltf.scene) ;
 	});
-
+*/
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
