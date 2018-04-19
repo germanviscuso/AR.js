@@ -144,17 +144,30 @@
 	})
 */
 
+
+			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			var cube = new THREE.Mesh( geometry, material );
+			cube.position.y	= geometry.parameters.height/2
+			scene.add( cube );
+
+			onRenderFcts.push(function(delta){
+				cube.rotation.x += 0.1;
+				cube.rotation.y += 0.1;
+			})
+			
 	
-	var loader = new THREE.GLTFLoader();
-	//loader.load( 'models/scene.gltf', function ( gltf ) {
+	/*var loader = new THREE.GLTFLoader();
+	  loader.load( 'models/scene.gltf', function ( gltf ) {
 		loader.load( 'https://rawgit.com/prashant-andani/3d-models/master/iphone/scene.gltf', function ( gltf ) {
-		/*gltf.scene.traverse( function ( child ) {
+		gltf.scene.traverse( function ( child ) {
 			if ( child.isMesh ) {
 				child.material.envMap = envMap;
 			}
-		});*/
+		});
 		scene.add( gltf.scene) ;
 	});
+	*/
 
 
 	//////////////////////////////////////////////////////////////////////////////////
