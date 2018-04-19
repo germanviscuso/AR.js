@@ -3,7 +3,6 @@
 <!-- three.js library -->
 <script src='vendor/three.js/build/three.min.js'></script>
 <!-- ar.js -->
-<!--script src="../build/ar.js"></script -->
 <script src="../build/ar.js"></script>
 <script>THREEx.ArToolkitContext.baseURL = '../'</script>
 
@@ -40,6 +39,8 @@
 
 	// Create a camera
 	var camera = new THREE.Camera();
+	camera.type = 'pattern';
+	camera.patternUrl = '../data/data/patt.infy';
 	scene.add(camera);
 
 	////////////////////////////////////////////////////////////////////////////////
@@ -107,9 +108,9 @@
 	// init controls for camera
 	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
 		type : 'pattern',
-		patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro',
+		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro',
 		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
-		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.infy',
+		patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.infy',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
 		changeMatrixMode: 'cameraTransformMatrix'
 	})
