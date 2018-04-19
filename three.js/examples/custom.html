@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <!-- three.js library -->
-<script src='vendor/three.js/build/three.min.js'></script>
+<script src='vendor/three.js/build/three.js'></script>
 <!-- ar.js -->
 <script src="../build/ar.js"></script>
 <script>THREEx.ArToolkitContext.baseURL = '../'</script>
@@ -139,7 +139,7 @@
 		mesh.rotation.x += Math.PI*delta
 	})
 	*/
-	var loader = new THREE.gltf();
+	var loader = new THREE.GLTFLoader();
 	loader.load( 'models/scene.gltf', function ( gltf ) {
 		/*gltf.scene.traverse( function ( child ) {
 			if ( child.isMesh ) {
