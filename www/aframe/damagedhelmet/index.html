@@ -5,7 +5,15 @@
     <a-scene embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
       <a-entity light="type: ambient; intensity: 1.5;"></a-entity>
       <a-marker type='pattern' url='https://rawgit.com/germanviscuso/AR.js/master/data/data/patt.gafas'>
-        <a-gltf-model src="https://rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"></a-gltf-model>
+        <a-gltf-model src="https://rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf" position="0 1.1 0">
+          <a-animation attribute = "rotation"
+               dur = "10000"
+               from = "0 0 0"
+               to = "0 360 0"
+               easing = "linear"
+               repeat = "indefinite">
+          </a-animation>
+        </a-gltf-model>
       </a-marker>
       <a-camera-static/>
     </a-scene>
